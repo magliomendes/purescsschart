@@ -28,8 +28,6 @@ export class AppComponent implements OnInit {
     for (let i = 0; i < days; i++) {
       pointsArray.push(Math.trunc(Math.random() * 19));
     }
-
-    const barsToSkip = (pointsArray.length / 10);
     let sizeInPx;
     let displayValue;
     pointsArray.forEach((n: number) => { this.highestValor = this.highestValor < n ? n : this.highestValor });
