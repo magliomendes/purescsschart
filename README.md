@@ -1,5 +1,3 @@
-Example: https://angular-jjm5wr.stackblitz.io
-
 # PureScssChart
 
 [Demo](https://purescsschart.stackblitz.io)
