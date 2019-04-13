@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    min-height: 100%;
+    line-height: 1.429;
+    font-size: 62.5%;
+    width: calc(100% + (100vw - 100%)); // fix for jumping scrollbar issue
+    position: absolute;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+}
+
+@media (max-width: 768px) {
+
+    html, body {
+        -ms-overflow-style: none;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+    
+}

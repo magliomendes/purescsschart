@@ -1,0 +1,136 @@
+$dark-gray: #B0B4BE;
+
+* {
+    cursor: default;
+}
+
+.chart-legend {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -.5rem;
+    p {
+        margin: 0 auto;
+        margin-right: 0;
+        text-align: right;
+        color: $dark-gray;
+        font-size: 1.35rem;
+        display: table;
+        width: 100%;
+        line-height: 1;
+        margin-top: -.7rem;
+    }
+}
+
+.chart-content {
+    border: .2rem solid $dark-gray;
+    border-top: 0;
+    border-right: 0;
+    width: 100%;
+
+    .chart {
+        display: grid;
+        grid-template-rows: repeat(100, 1fr);
+        height: 18rem;
+        width: 100%;
+        padding: 0;
+        transform: scaleY(-1);
+
+        &:after {
+            content: "";
+            border: .1rem solid;
+            border-color: #FA7FAA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            border-style: dotted;
+            animation-name: widthSize;
+            animation-duration: 2s;
+            animation-fill-mode: both;
+        }
+
+        &:before {
+            content: "";
+            border: .1rem solid;
+            border-color: #FA7FAA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 100%;
+            border-style: dotted;
+            animation-name: widthSize;
+            animation-duration: 2s;
+            animation-fill-mode: both;
+        }
+
+        .bar {
+            max-height: 18rem;
+            border-radius: 0;
+            background-image: linear-gradient(#8CA6DB, #B993D6);
+            border: .1rem solid #fff;
+            grid-row-start: 0;
+            grid-row-end: 100;
+            animation-name: heightSize;
+            animation-duration: 1s;
+            animation-timing-function: cubic-bezier(.17, .67, .1, -1.45);
+            animation-fill-mode: both;
+            position: relative;
+            transition: 0.4s;
+
+            &:hover {
+                background-image: linear-gradient(#FA7FAA, #FA7FAA);
+
+                .date-indicator {
+                    p {
+                        color: #FA7FAA;
+                    }
+                }
+            }
+
+            .date-indicator {
+                transform: scaleY(-1) rotate(-90deg);
+                position: absolute;
+                text-align: center;
+                margin-top: -2.5rem;
+                width: 100%;
+
+                p {
+                    color: $dark-gray;
+                    font-size: 1.35rem;
+                    margin: 0;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+}
+
+button {
+    height: 4rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+}
+
+@keyframes heightSize {
+    from {
+        max-height: 0%;
+    }
+
+    to {
+        max-height: 100%;
+    }
+}
+
+@keyframes widthSize {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
