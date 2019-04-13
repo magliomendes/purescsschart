@@ -4,9 +4,9 @@ Example: https://angular-jjm5wr.stackblitz.io
 
 [Demo](https://purescsschart.stackblitz.io)
 
-##Quick start
+## Quick start
 - Clone de repo
-- Install [Angular CLI] (https://cli.angular.io/)
+- Install [Angular CLI](https://cli.angular.io/)
 - Install bootstrap: npm install bootstrap
 
 ## Development server
